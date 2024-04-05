@@ -1,8 +1,8 @@
 # This script contains the R code to work with DMIs and average ancestry in F2s
 #
-# Authors: Aguillon SM
-# Year: TBD
-# Title: TBD
+# Authors: Aguillon SM, et al.
+# Year: 2024
+# Title: Pervasive gene flow despite strong and varied reproductive barriers in swordtails
 #        
 # Journal Info: TBD
 # bioRxiv DOI: TBD
