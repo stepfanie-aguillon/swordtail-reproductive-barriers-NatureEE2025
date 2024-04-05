@@ -1,8 +1,8 @@
 # This includes scripts used on the HPC for ancestry analyses
 #
-# Authors: Aguillon SM
-# Year: TBD
-# Title: TBD
+# Authors: Aguillon SM, et al.
+# Year: 2024
+# Title: Pervasive gene flow despite strong and varied reproductive barriers in swordtails
 #        
 # Journal Info: TBD
 # bioRxiv DOI: TBD
