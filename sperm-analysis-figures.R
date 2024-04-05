@@ -22,7 +22,7 @@ library(cowplot)
 
 # load data
 cols = c("ID", "species", "obj", "sperm_number", "head_l", "head_w", "mid_l")
-sperm_df <- read_excel("/Users/aguillon/Swordtail\ Dropbox/Schumer_lab_resources/Project_files/Xcortezi_Xbirchmanni_reproductive_barriers/Data/Sperm_imaging/Data/corbir_sperm_morpho.xlsx",
+sperm_df <- read_excel("/Users/aguillon/Swordtail\ Dropbox/Schumer_lab_resources/Project_files/Xcortezi_Xbirchmanni_reproductive_barriers/Data/Sperm_imaging/Data/sperm-morphology.xlsx",
                        col_names=cols, na="NA", skip=1) %>%
   filter(obj == 40) %>%
   select(ID, species, sperm_number, head_l, head_w, mid_l) %>%
@@ -88,7 +88,7 @@ plot_grid(head_l_plot, head_w_plot, head_shape_plot, mid_l_plot, align="hv", nro
 #### supplementary figures for sperm motility data ####
 
 # load data
-sperm_motility_df <- read_csv("/Users/aguillon/Swordtail\ Dropbox/Schumer_lab_resources/Project_files/Xcortezi_Xbirchmanni_reproductive_barriers/Data/Sperm_imaging/Data/mean_motilities.csv", 
+sperm_motility_df <- read_csv("/Users/aguillon/Swordtail\ Dropbox/Schumer_lab_resources/Project_files/Xcortezi_Xbirchmanni_reproductive_barriers/Data/Sperm_imaging/Data/sperm-motilities.csv", 
                               col_names=TRUE)
 
 VAP_plot <- ggplot(data=sperm_motility_df, aes(x=geno, y=`VAP Mean (um/s)`)) +
