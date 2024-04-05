@@ -1,0 +1,36 @@
+// set up a simple neutral simulation
+initialize() {
+	initializeMutationRate(3.5e-9); //empirical mutation rate in percomorphs
+	
+	// m1 mutation type: neutral
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	
+	// g1 genomic element type: uses m1 for all mutations
+	initializeGenomicElementType("g1", m1, 1.0);
+	
+	// uniform chromosome of length 100 kb with uniform recombination
+	initializeGenomicElement(g1, 0, 149999); //average ancestry tract length for X. cortezi in hybrid pops is 150kb
+	initializeRecombinationRate(1e-8);
+}
+
+// create a population of 500 individuals
+1 early() {
+	sim.addSubpop("p1", 51000); //population size of X. cortezi
+}
+
+//Run a burn in to equilibrate
+
+10000 early(){
+	sim.addSubpop("p2", 51000); //population size of X. cortezi
+}
+
+10001 early(){
+p1.setSubpopulationSize(500);
+p2.setSubpopulationSize(500);
+}
+
+
+// output final sample
+10200 late() { p1.outputVCFSample(10,F,"*",T,"population1_drift.vcf");}
+10200 late() { p2.outputVCFSample(10,F,"*",T,"population2_drift.vcf");}
+10200 late() { sim.outputFixedMutations(); }
