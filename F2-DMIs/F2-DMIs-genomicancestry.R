@@ -396,16 +396,17 @@ chr7_ancestry <- avg_ancestry %>%
   filter(group=="chr-07") %>%
   filter(!between(position, 24792083, 25737000)) 
 
-chr7_ancestry_plot <- ggplot(data=chr7_ancestry) + 
-  geom_ribbon(aes(x=position/1e6, ymin=HI_min, ymax=HI_max), fill="light gray") +
-  geom_point(aes(x=position/1e6, y=hybrid_index, color=sig), size=0.5) + 
-  geom_point(aes(x=22576066/1e6, y=0.31), color="red", shape=17, size=5) +
-  geom_hline(yintercept=0.5, linetype="dashed") +
-  geom_segment(aes(x=16781454/1e6, xend=28711584/1e6, y=0.31, yend=0.31), color="red", linewidth=1) +
+chr7_ancestry_plot <- ggplot() + 
+  geom_ribbon(data=chr7_ancestry, aes(x=position/1e6, ymin=HI_min, ymax=HI_max), fill="light gray") +
+  geom_point(data=chr7_ancestry, aes(x=position/1e6, y=hybrid_index, color=sig), size=0.5) + 
   scale_color_manual(values=c("black", "red")) +
+  geom_point(data=filter(chr7_ancestry, sig=="TRUE"), aes(x=position/1e6, y=hybrid_index), size=0.75, color="red") +
+  geom_point(aes(x=22576066/1e6, y=0.385), color="red", shape=17, size=3) +
+  geom_hline(yintercept=0.5, linetype="dashed") +
+  geom_segment(aes(x=16781454/1e6, xend=28711584/1e6, y=0.385, yend=0.385), color="red", linewidth=1) +
   xlab("Chromosome 7 position (Mb)") +
   ylab("Proportion genome X. cortezi-derived") + 
-  ylim(0.3,0.7) + 
+  scale_y_continuous(limits=c(0.375,0.625), breaks=c(0.4,0.5,0.6)) +
   theme_bw() + 
   theme(legend.position="none", axis.title=element_text(size=10,face="bold"), axis.text=element_text(size=8,color="black"))
 
@@ -430,16 +431,17 @@ chr14_ancestry <- avg_ancestry %>%
   filter(group=="chr-14") %>%
   filter(!between(position, 18269172, 18539743))
 
-chr14_ancestry_plot <- ggplot(data=chr14_ancestry) + 
-  geom_ribbon(aes(x=position/1e6, ymin=HI_min, ymax=HI_max), fill="light gray") +
-  geom_point(aes(x=position/1e6, y=hybrid_index, color=sig), size=0.5) + 
-  geom_point(aes(x=9410308/1e6, y=0.31), color="red", shape=17, size=5) +
-  geom_segment(aes(x=6569477/1e6, xend=11511130/1e6, y=0.31, yend=0.31), color="red", linewidth=1) + 
-  geom_hline(yintercept=0.5, linetype="dashed") +
+chr14_ancestry_plot <- ggplot() + 
+  geom_ribbon(data=chr14_ancestry, aes(x=position/1e6, ymin=HI_min, ymax=HI_max), fill="light gray") +
+  geom_point(data=chr14_ancestry, aes(x=position/1e6, y=hybrid_index, color=sig), size=0.5) + 
   scale_color_manual(values=c("black", "red")) +
+  geom_point(data=filter(chr14_ancestry, sig=="TRUE"), aes(x=position/1e6, y=hybrid_index), size=0.75, color="red") +
+  geom_point(aes(x=9410308/1e6, y=0.385), color="red", shape=17, size=3) +
+  geom_segment(aes(x=6569477/1e6, xend=11511130/1e6, y=0.385, yend=0.385), color="red", linewidth=1) + 
+  geom_hline(yintercept=0.5, linetype="dashed") +
   xlab("Chromosome 14 position (Mb)") +
   ylab("Proportion genome X. cortezi-derived") + 
-  ylim(0.3,0.7) + 
+  scale_y_continuous(limits=c(0.375,0.625), breaks=c(0.4,0.5,0.6)) +
   theme_bw() + 
   theme(legend.position="none", axis.title=element_text(size=10,face="bold"), axis.text=element_text(size=8,color="black"))
 
@@ -461,8 +463,8 @@ round(quantile(chr14_sel$s,c(0.025,0.975)),3)
 
 #### PLOT MULTIPANEL FOR FIGURE 5 ####
 plot_grid(chr7_ancestry_plot, chr7_sel_plot, chr14_ancestry_plot, chr14_sel_plot, nrow=2, 
-          rel_widths=c(1.75, 1, 1.75, 1))
-# export as 3.5" tall x 6.5" wide
+          rel_widths=c(1, 1, 1, 1))
+# export as 3.5" tall x 3.5" wide
 # in Illustrator: fix y-axis for ancestry panels, add panel labels, italicize species names, add selection coefficients
 
 
