@@ -5,7 +5,7 @@
 # Title: Pervasive gene flow despite strong and varied reproductive barriers in swordtails
 #        
 # Journal Info: TBD
-# bioRxiv DOI: TBD
+# bioRxiv DOI: https://doi.org/10.1101/2024.04.16.589374
 #
 # Edited date: 3 April 2024
 #
