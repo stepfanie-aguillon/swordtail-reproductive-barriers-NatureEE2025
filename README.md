@@ -1,9 +1,9 @@
 # Scripts for Aguillon et al. (2024)
 
 
-This repository contains the code used in the manuscript: https://doi.org/10.1101/2024.04.16.589374 
+This repository contains the code used in the manuscript: 
 
-**Aguillon SM, et al. 2024. Pervasive gene flow despite strong and varied reproductive barriers in swordtails. bioRxiv doi:**
+**Aguillon SM, et al. 2024. Pervasive gene flow despite strong and varied reproductive barriers in swordtails. bioRxiv doi: https://doi.org/10.1101/2024.04.16.589374**
 
 Data is available from the Dryad Digital Repository: available upon publication
 
