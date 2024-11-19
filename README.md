@@ -7,6 +7,6 @@ This repository contains the code used in the manuscript:
 
 Data is available from the Dryad Digital Repository: available upon publication
 
-Raw sequencing reads can be found on NCBI: available upon publication
+Raw sequencing reads can be found on NCBI: [BioProject PRJNA1106506](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA1106506)
 
 If you use these scripts, please cite the paper.
