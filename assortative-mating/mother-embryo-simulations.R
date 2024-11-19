@@ -7,7 +7,7 @@
 # Journal Info: TBD
 # bioRxiv DOI: https://doi.org/10.1101/2024.04.16.589374
 #
-# Edited date: 5 Oct 2023
+# Edited date: 24 October 2024
 #
 # Please cite the paper if you use these scripts
 #
@@ -262,6 +262,7 @@ ggplot() +
   geom_hline(aes(yintercept=0),color="dark gray",linewidth=1) +
   geom_smooth(data=output,aes(x=assort_mating_value,y=sim_diff)) +
   geom_point(data=output,aes(x=assort_mating_value,y=sim_diff),shape=21) +
+  geom_errorbar(data=output,aes(x=assort_mating_value,y=sim_diff,ymin=sim_lowerCI-observed_diff_CI[2],ymax=sim_upperCI-observed_diff_CI[2])) +
   xlab("Simulated assortative mating value") +
   ylab("Simulated mean - Observed mean") +
   theme_bw() +
