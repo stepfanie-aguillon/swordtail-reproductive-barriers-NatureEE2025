@@ -7,7 +7,7 @@
 # Journal Info: TBD
 # bioRxiv DOI: https://doi.org/10.1101/2024.04.16.589374
 #
-# Edited date: 18 Dec 2023
+# Edited date: 24 Oct 2024
 #
 # Please cite the paper if you use these scripts
 #
@@ -94,6 +94,24 @@ ggplot(data=full_assoc, aes(x=species, y=SOP)) +
 
 
 
+#### summarize numbers of individuals included in each analysis
+full_assoc <- full_assoc %>%
+  group_by(trial_type, species)
+
+summarize(full_assoc,
+          n=n())
+## A tibble: 4 × 3
+## Groups:   trial_type [2]
+#trial_type       species        n
+#<chr>            <chr>      <int>
+#1 visual           birchmanni    41
+#2 visual           cortezi       18
+#3 visual+olfactory birchmanni    37
+#4 visual+olfactory cortezi       30
+
+
+
+
 
 
 # statistically test results for SOP (Strength of Preference)
@@ -124,9 +142,3 @@ wilcox.test(filter(full_assoc, species=="cortezi" & trial_type=="visual+olfactor
 #data:  filter(full_assoc, species == "cortezi" & trial_type == "visual+olfactory")$SOP
 #V = 196, p-value = 0.6829
 #alternative hypothesis: true location is greater than 0
-
-
-
-
-
-
