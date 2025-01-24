@@ -10,3 +10,5 @@ Data is available from the Dryad Digital Repository: [https://doi.org/10.5061/dr
 Raw sequencing reads can be found on NCBI: [BioProject PRJNA1106506](https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA1106506)
 
 If you use these scripts, please cite the paper.
+
+[![DOI](https://zenodo.org/badge/782559687.svg)](https://doi.org/10.5281/zenodo.14736259)
