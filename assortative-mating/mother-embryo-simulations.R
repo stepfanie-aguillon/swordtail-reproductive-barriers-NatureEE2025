@@ -1,11 +1,11 @@
 # This script contains the R code to process mother/embryo data and run assortative mating simulations
 #
 # Authors: Aguillon SM, et al.
-# Year: 2024
+# Year: 2025
 # Title: Pervasive gene flow despite strong and varied reproductive barriers in swordtails
 #        
-# Journal Info: TBD
-# bioRxiv DOI: https://doi.org/10.1101/2024.04.16.589374
+# Journal Info: Nature Ecology and Evolution
+# DOI: https://doi.org/10.1038/s41559-025-02669-9
 #
 # Edited date: 24 October 2024
 #
